@@ -1,0 +1,18 @@
+name: Deploy to Argo CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install kubectl
+      uses: azure/k8s-set-context@v1
+      with:
+        kubeconfig: ${{ secrets.KUBECONFIG }}
+    - name: Deploy to Argo CD
+      run: kubectl apply -f application.yaml -n argocd
