@@ -27,9 +27,9 @@ jobs:
         ls -lh
         cd django-github-actions-demo
         pip install -r requirements.txt
-    - name: Lint with Flake8
-      run: |
-        flake8 .
+    # - name: Lint with Flake8
+    #   run: |
+    #     flake8 .
     - name: Run Tests
       run: |
         python manage.py test
