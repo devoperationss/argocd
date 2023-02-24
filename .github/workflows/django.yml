@@ -32,4 +32,5 @@ jobs:
     #     flake8 .
     - name: Run Tests
       run: |
+        cd demo
         python manage.py test
