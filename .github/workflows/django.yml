@@ -34,5 +34,7 @@ jobs:
     - name: Run Tests
       run: |
         ls -lh
+        cd django-github-actions-demo
+        ls -lh
         cd demo
         python manage.py test
